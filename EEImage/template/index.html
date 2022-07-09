@@ -1,0 +1,29 @@
+{% extends 'headerPage.html' %}
+
+{% block content%}
+
+    <h2>Upload Electrical Element Here</h2>
+
+
+  
+    <br>
+   
+    <form method="post" enctype="multipart/form-data" action="predictElement">
+    
+ {% csrf_token %}
+ <div class="col-md-4 col-sm-4"><label for="fname">Upload Element Here:</label> </div> <input name="filePath" type="file"><br><br>
+ 
+ <br>
+
+
+ <input type="submit" value="Submit" ></div>
+
+<h2>The element is predicted to be {{predictedElement}}</h2>
+<img src = {{filePathName}} alt = 'imagename'>
+
+
+</form>
+<br>
+
+
+{% endblock %}
